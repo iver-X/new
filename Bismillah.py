@@ -83,7 +83,7 @@ class login:
 		os.system('clear')
 		banner()
 		asu = random.choice([M,P,K,H])
-		cookie=input(f' {b} COKIE MU ASU :{asu} ')
+		cookie=input(f' {B} COKIE MU ASU :{asu} ')
 		open("cok.txt", "w").write(cookie)
 		with requests.Session() as rsn:
 			try:
@@ -104,10 +104,10 @@ class login:
 				if '"access_token":' in str(response.headers):
 					token = re.search('"access_token":"(.*?)"', str(response.headers)).group(1)
 					open("token.x", "w").write(token)
-					print('%sLogin Succes%s'%(h, p))
+					print('%sLogin Succes%s'%(H, P))
 					menu().main()
 				else:
-					print('%sFailled Get Token%s'%(m, p))
+					print('%sFailled Get Token%s'%(M, P))
 					os.system("rm -f token.x")
 					os.system("rm -f cok.txt")
 			except KeyError:
